@@ -1,3 +1,4 @@
+% 画像ファイルをまとめる関数
 function [fileList, y] = makeFileList(posDir, negDir)
 
     pos = dir(fullfile(posDir, '*.jpg'));

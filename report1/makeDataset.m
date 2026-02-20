@@ -1,3 +1,4 @@
+% makeHistをつかってデータセットを作る
 function [X, y] = makeDataset(posDir, negDir)
 
     X = [];

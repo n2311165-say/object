@@ -1,3 +1,4 @@
+% codebookを作る関数
 function codebook = makeCodebook(fileList)
 
     maxDescPerImage = 200;

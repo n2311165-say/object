@@ -1,3 +1,4 @@
+% カラーヒストグラムを作る関数
 function X = makeHist(I)
 
 A = double(reshape(I,[],3));

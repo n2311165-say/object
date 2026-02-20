@@ -1,3 +1,4 @@
+% DENN特徴量を抽出する関数
 function X = extractDCNNFeatures(fileList, net, featLayer, inputSize)
 
     N = numel(fileList);

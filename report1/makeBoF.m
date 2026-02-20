@@ -1,3 +1,4 @@
+% BoFベクトルを作る関数
 function X = makeBoF(fileList, codebook)
     N = numel(fileList);
     K = size(codebook,1);

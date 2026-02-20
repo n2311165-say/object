@@ -1,3 +1,4 @@
+% BoFと非線形SVMを使って5-fold cross validationを行う関数
 function acc = crossVal_2(X, y)
 
     N = size(X,1);

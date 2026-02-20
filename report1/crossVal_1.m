@@ -1,3 +1,4 @@
+% データとnnClassifyをつかって5-fold cross validationを行う関数
 function acc = crossVal_1(X, y)
     
     N = size(X, 1);

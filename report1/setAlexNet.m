@@ -1,3 +1,4 @@
+% AlexNetの設定をする関数
 function [net, featLayer, inputSize] = setAlexNet()
 
     net = alexnet;

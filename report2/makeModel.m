@@ -1,3 +1,4 @@
+% ノイズの少ない画像でモデルをつくる関数
 function svmMdl = makeModel(dir)
 % 学習データの用意
 posDir = fullfile(pwd, dir);

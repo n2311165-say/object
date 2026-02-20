@@ -1,3 +1,4 @@
+% 再ランキングした結果の上位100枚を表示する関数
 function showTop100(rankedFiles,n)
 topFiles = rankedFiles(1:100);
 figure;

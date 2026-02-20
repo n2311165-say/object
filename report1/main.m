@@ -1,4 +1,4 @@
-[X11, y11] = makeDataset('kaisendon', 'oyakodon');
+[X11, y11] = main('kaisendon', 'oyakodon');
 acc11 = crossVal_1(X11,y11);
 [X12, y12] = makeDataset('kaisendon', 'nigiri sushi');
 acc12 = crossVal_1(X12,y12);

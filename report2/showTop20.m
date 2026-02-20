@@ -1,3 +1,4 @@
+% modelでリランキングしたときのtop20を表示する関数
 function showTop20(rankedFiles,n)
 topFiles = rankedFiles(1:20);
 figure;

@@ -1,3 +1,4 @@
+% ノイズの多い画像をDCNN特徴抽出する関数
 function [Xtest, imdsTest] = extractDCNNFeatures()
 testDir = fullfile(pwd, 'interesting');
 imdsTest = imageDatastore(testDir);

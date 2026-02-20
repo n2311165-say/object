@@ -1,3 +1,4 @@
+% 最近傍分類を実装する関数
 function y_pred = nnClassify(X_train, y_train, X_test)
 
     Ntest = size(X_test, 1);

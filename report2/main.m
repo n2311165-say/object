@@ -1,4 +1,4 @@
-function report2()
+function main()
 SVMModel50 = makeModel('oyakodon50');
 [X50, imdsTest50] = extractDCNNFeatures();
 [label50, score50] = predict(SVMModel50, X50);
