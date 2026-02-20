@@ -1,0 +1,32 @@
+[X11, y11] = makeDataset('kaisendon', 'oyakodon');
+acc11 = crossVal_1(X11,y11);
+[X12, y12] = makeDataset('kaisendon', 'nigiri sushi');
+acc12 = crossVal_1(X12,y12);
+fprintf('--- 分類精度の比較 ---\n');
+fprintf('(1) カラーヒストグラムと最近傍分類\n');
+fprintf('pos: 海鮮丼  neg: 親子丼・・・ %.2f%%\n', acc11*100);
+fprintf('pos: 海鮮丼  neg: 握り寿司・・・ %.2f%%\n', acc12*100);
+
+load('codebook.mat');
+[fileList21, y21] = makeFileList('kaisendon', 'oyakodon');
+X21 = makeBoF(fileList21,codebook);
+acc21 = crossVal_2(X21,y21);
+[fileList22, y22] = makeFileList('kaisendon', 'nigiri sushi');
+X22 = makeBoF(fileList22, codebook);
+acc22 = crossVal_2(X22, y22);
+fprintf('\n\n');
+fprintf('(2) BoFベクトルと非線形SVMによる分類\n');
+fprintf('pos: 海鮮丼  neg: 親子丼・・・ %.2f%%\n', acc21*100);
+fprintf('pos: 海鮮丼  neg: 握り寿司・・・ %.2f%%\n', acc22*100);
+
+[net, featLayer, inputSize] = setAlexNet();
+[fileList31, y31] = makeFileList('kaisendon', 'oyakodon');
+X31 = extractDCNNFeatures(fileList31, net, featLayer, inputSize);
+acc31 = crossVal_3(X31, y31);
+[fileList32, y32] = makeFileList('kaisendon', 'nigiri sushi');
+X32 = extractDCNNFeatures(fileList32, net, featLayer, inputSize);
+acc32 = crossVal_3(X32, y32);
+fprintf('\n\n');
+fprintf('(3) ANlexNetによるDCN特徴量と線形SVM\n');
+fprintf('pos: 海鮮丼  neg: 親子丼・・・ %.2f%%\n', acc31*100);
+fprintf('pos: 海鮮丼  neg: 握り寿司・・・ %.2f%%\n', acc32*100);
